@@ -1,6 +1,7 @@
 $(() => {
     let btnAdd = $('#btnAdd')
     let btnReset = $('#btnReset')
+    let btnCleanup = $('#btnCleanup')
     let ulTasks = $('#ulTasks')
     let inpNewTask = $('#inpNewTask')
 
@@ -46,4 +47,12 @@ $(() => {
     //         addItem()
     //     }
     // })
+
+    // Cleanup functionality
+
+    function clearDone(){
+        $('#ulTasks .done').remove()
+    }
+
+    btnCleanup.click(clearDone)
 })
