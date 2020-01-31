@@ -19,7 +19,7 @@
     <div class="container">
         <h1 align="center">Todo List</h1>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="form-group">
                     <label for="inpNewTask">New Task</label>
                     <input type="text" class="form-control" id="inpNewTask" aria-describedby="newTaskHelp" placeholder="Enter the name of the task">
@@ -29,20 +29,24 @@
 
             <!-- Buttons -->
 
-            <div class="col-md-4">
-                <div class="row">
-                    <button class="btn btn-success col m-2" id="btnAdd">
+            <div class="col-md-5 row">
+                <div class="col-6 col-sm-3 col-md-6 p-1">
+                    <button class="btn btn-success col" id="btnAdd">
                         <i class="fas fa-plus-square"></i> Add
                     </button>
-                    <button class="btn btn-danger col m-2" id="btnReset">
+                </div>
+                <div class="col-6 col-sm-3 col-md-6 p-1">
+                    <button class="btn btn-danger col" id="btnReset">
                         <i class="fas fa-backspace"></i> Reset
                     </button>
                 </div>
-                <div class="row">
-                    <button class="btn btn-info col m-2" id="btnSort">
+                <div class="col-6 col-sm-3 col-md-6 p-1">
+                    <button class="btn btn-info col" id="btnSort">
                         <i class="fas fa-sort-amount-down"></i> Sort
                     </button>
-                    <button class="btn btn-warning col m-2" id="btnCleanup">
+                </div>
+                <div class="col-6 col-sm-3 col-md-6 p-1">
+                    <button class="btn btn-warning col" id="btnCleanup">
                         <i class="fas fa-trash-alt"></i> Cleanup
                     </button>
                 </div>
