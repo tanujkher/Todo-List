@@ -9,6 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Can use defer also but it doesn't work on old browsers -->
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Input Box -->
@@ -17,8 +19,8 @@
         <div class="row">
             <div class="col">
                 <div class="form-group">
-                    <label for="newTask">New Task</label>
-                    <input type="text" class="form-control" id="newTask" aria-describedby="newTaskHelp" placeholder="Enter the name of the task">
+                    <label for="inpNewTask">New Task</label>
+                    <input type="text" class="form-control" id="inpNewTask" aria-describedby="newTaskHelp" placeholder="Enter the name of the task">
                     <small id="newTaskHelp" class="form-text text-muted">A short one line description of your task</small>
                 </div>
             </div>
@@ -26,18 +28,12 @@
 
         <!-- Buttons -->
         <div class="row px-4">
-            <button class="btn btn-success col m-2">Add</button>
-            <button class="btn btn-danger col m-2">Clear</button>
+            <button class="btn btn-success col m-2" id="btnAdd">Add</button>
+            <button class="btn btn-danger col m-2" id="btnClear">Clear</button>
         </div>
 
         <!-- Task List -->
-        <ul class="row list-group m-2">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
+        <ul class="row list-group m-2" id="ulTasks"></ul>
     </div>
 </body>
 </html>
