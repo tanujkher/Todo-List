@@ -23,7 +23,7 @@ $(() => {
 
         ulTasks.append(listItem)
         inpNewTask.val('')
-        toggleResetBtn(true)
+        toggleInputBtn()
     }
 
     // Add functionality
@@ -34,7 +34,7 @@ $(() => {
 
     btnReset.click(() => {
         inpNewTask.val('')
-        toggleResetBtn(true)
+        toggleInputBtn()
     })
 
     // Enter Key
@@ -55,6 +55,7 @@ $(() => {
 
     function clearDone(){
         $('#ulTasks .done').remove()
+        toggleInputBtn()
     }
 
     btnCleanup.click(clearDone)
@@ -63,23 +64,17 @@ $(() => {
 
     btnSort.click(() => {
         $('#ulTasks .done').appendTo(ulTasks)
+        toggleInputBtn()
     })
 
     // Disable buttons
 
-    function toggleResetBtn(isValEmpty){
-        if(isValEmpty){
-            btnReset.prop('disabled', true)
-            btnAdd.prop('disabled', true)
-        }
-        else{
-            btnReset.prop('disabled', false)
-            btnAdd.prop('disabled', false)
-        }
+    function toggleInputBtn(){
+        btnReset.prop('disabled', inpNewTask.val() == '')
+        btnAdd.prop('disabled', inpNewTask.val() == '')
+        btnSort.prop('disabled', ulTasks.children().length < 1)
+        btnCleanup.prop('disabled', ulTasks.children().length < 1) 
     }
 
-    inpNewTask.on('input', () => {
-        console.log(inpNewTask.val())
-        toggleResetBtn(inpNewTask.val() == '')
-    })
+    inpNewTask.on('input', toggleInputBtn)
 })
