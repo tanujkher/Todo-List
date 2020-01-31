@@ -2,6 +2,7 @@ $(() => {
     let btnAdd = $('#btnAdd')
     let btnReset = $('#btnReset')
     let btnCleanup = $('#btnCleanup')
+    let btnSort = $('#btnSort')
     let ulTasks = $('#ulTasks')
     let inpNewTask = $('#inpNewTask')
 
@@ -55,4 +56,10 @@ $(() => {
     }
 
     btnCleanup.click(clearDone)
+
+    // Sort functionality
+
+    btnSort.click(() => {
+        $('#ulTasks .done').appendTo(ulTasks)
+    })
 })
